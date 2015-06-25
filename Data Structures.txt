@@ -1,0 +1,54 @@
+Data structures code
+
+//Stack - Last In, First Out
+/**********************************************************************
+var stack = [];
+stack.push("Adam");      
+stack.push("Steve");       
+console.log("After pushing, stack is " + stack.join());
+stack.push("Jerome");   
+
+//Jerome is the last one in and stack is ["Adam", "Steve", Jerome"]
+console.log("Jerome is the last one in and stack is " + stack.join());
+var i = stack.pop(); 
+console.log("Jerome is the first one out and stack is now " + stack.join());
+
+
+//Queue - First In, First Out
+//********************************************************************
+var queue = [];
+queue.push("Betty");      
+queue.push("Veronica");       
+queue.push("Kevin");
+console.log("The queue in order of arrival is " + queue.join());
+
+queue.shift(); //Queue "moves forward"
+console.log("Betty was the first in and first out. Queue is now " + queue.join());
+
+//Binary Tree
+//*********************************************************************
+function leftChild(idx) {
+    return (2 * idx) + 1;
+}
+
+function rightChild(idx) {
+    return (2 * idx) + 2;
+}
+
+var tree = ["A", "B", "C", "D", "E", "F", "G", "H", "I", 0, 0, 0, 0, "J", 0];
+
+var lastParentNode = (tree.length / 2) - 1;
+
+for (var i = 0; i < lastParentNode; i++) {
+    var lc = leftChild(i);
+    var rc = rightChild(i);
+    if (tree[lc] !== 0) {
+        console.log("Left child of " + tree[i] + " is " + tree[lc]);
+    }
+    
+    if (tree[rc] !== 0) {
+        console.log("Right child of " + tree[i] + " is " + tree[rc]);
+    }                                                           
+    
+}
+
